@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Depoly reactapp001
+name: Deploy reactapp001
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -41,5 +41,5 @@ jobs:
       run: npm install -g surge
        
     - name: deploying on surge
-      run: surge ./build https://reactapp1tariq.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
+      run: surge ./build http://reactapp1tariq.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
     
