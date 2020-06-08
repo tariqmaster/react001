@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Depoly reactapp001
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -26,6 +26,7 @@ jobs:
       uses: actions/setup-node@v1.4.2
       with:
         version: 12
+      
     - name: GitHub Action for Yarn
       uses: Borales/actions-yarn@v2.3.0
       with:
@@ -33,8 +34,8 @@ jobs:
         cmd: install
         
     - name: Installing surge
-       run: npm install -g surge
+      run: npm install -g surge
        
     - name: deploying on surge
-       run: surge ./build reactapp1tariq.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      run: surge ./build reactapp1tariq.surge.sh --token ${{secrets.SURGE_TOKEN}}
     
